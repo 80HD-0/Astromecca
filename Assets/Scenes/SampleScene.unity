@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  sensetivity: 5
+  sensitivity: 1000000
   playerRB: {fileID: 1012818501}
   player: {fileID: 1012818505}
 --- !u!1 &1409727065
