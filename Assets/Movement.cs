@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked; // Locks cursor to the center of the screen
             Cursor.visible = false; // Hides the cursor
         }
+
     }
 
     void HandleRotation()
@@ -62,7 +63,9 @@ public class Movement : MonoBehaviour
         Vector3 movement = (forward + right).normalized * movementSpeed;
 
         // Apply the movement to the Rigidbody (keeping the y velocity for gravity)
-        Vector3 newVelocity = new Vector3(movement.x, playerRB.velocity.y, movement.z);
-        playerRB.velocity = newVelocity;
+        if (movement.x != 0 || movement.y != 0) {
+            Vector3 newVelocity = new Vector3(movement.x, playerRB.velocity.y, movement.z);
+            playerRB.velocity = newVelocity;
+        }
     }
 }
