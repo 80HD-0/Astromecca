@@ -1,3 +1,5 @@
+using System.Collections.Specialized;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -6,6 +8,9 @@ public class Movement : MonoBehaviour
     public float sensetivity = 700.0f;  // Adjust as needed for smoothness
     public Rigidbody playerRB;
     public Transform player;
+    public Collider grippers;
+    private bool gripping;
+    public float jumpStrength = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +42,21 @@ public class Movement : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked; // Locks cursor to the center of the screen
             Cursor.visible = false; // Hides the cursor
         }
-
+        if (Input.GetAxis("Jump") == 1)
+        {
+            float startTime = Time.time;
+            if (gripping) {
+                playerRB.velocity = new Vector3(playerRB.velocity.x, jumpStrength, playerRB.velocity.z);
+            }
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        gripping = true;
+    }
+    void OnTriggerExit(Collider other)
+    {
+        gripping = false;
     }
 
     void HandleRotation()
@@ -63,7 +82,8 @@ public class Movement : MonoBehaviour
         Vector3 movement = (forward + right).normalized * movementSpeed;
 
         // Apply the movement to the Rigidbody (keeping the y velocity for gravity)
-        if (movement.x != 0 || movement.y != 0) {
+        if (movement.x != 0 || movement.y != 0)
+        {
             Vector3 newVelocity = new Vector3(movement.x, playerRB.velocity.y, movement.z);
             playerRB.velocity = newVelocity;
         }
