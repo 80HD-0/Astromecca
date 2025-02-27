@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickedup: 0
-  hands: {fileID: 0}
+  hands: {fileID: 1421178742}
   tool: {fileID: 868932057}
   toolRB: {fileID: 868932059}
 --- !u!54 &868932059
