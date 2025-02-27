@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Specialized;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class cameravert : MonoBehaviour

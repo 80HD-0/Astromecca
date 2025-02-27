@@ -1,5 +1,3 @@
-using System.Collections.Specialized;
-using System.Diagnostics;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -61,15 +59,12 @@ public class Movement : MonoBehaviour
 
     void HandleRotation()
     {
-        // Get mouse movement for rotation (mouseX controls yaw)
+        Vector3 eyesrot = player.eulerAngles;
         float mouseX = Input.GetAxis("Mouse X");
+        float turnAmount = mouseX * sensetivity * Time.smoothDeltaTime;
+        eyesrot.y += turnAmount;
+        player.eulerAngles = eyesrot;
 
-        // Calculate the new rotation based on mouse input
-        float turnAmount = mouseX * sensetivity * Time.deltaTime;
-        Quaternion targetRotation = Quaternion.Euler(player.eulerAngles.x, player.eulerAngles.y + turnAmount, player.eulerAngles.z);
-
-        // Smoothly rotate the player
-        player.rotation = Quaternion.RotateTowards(player.rotation, targetRotation, sensetivity * Time.deltaTime);
     }
 
     void HandleMovement(float vertical, float horizontal)
