@@ -1,0 +1,7 @@
+git pull --no-edit
+git init 
+git add . 
+git commit -m "add story and commit script to repo" 
+git branch -M main 
+git remote add origin https://github.com/80HD-0/Astromecca 
+git push -u origin main
