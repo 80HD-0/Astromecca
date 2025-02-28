@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Cameravert.cs" />
     <Compile Include="Assets\toolscript.cs" />
+    <Compile Include="Assets\parenttoolscript.cs" />
     <Compile Include="Assets\Movement.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 868932061}
   - component: {fileID: 868932060}
   - component: {fileID: 868932059}
-  - component: {fileID: 868932058}
+  - component: {fileID: 868932064}
   m_Layer: 0
   m_Name: Spear
   m_TagString: Untagged
@@ -442,22 +442,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &868932058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868932057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f87a5438c3506644499aa77e0a86f2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickedup: 0
-  hands: {fileID: 1421178742}
-  tool: {fileID: 868932057}
-  toolRB: {fileID: 868932059}
 --- !u!54 &868932059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -573,6 +557,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &868932064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868932057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21958e021537afa4f857b1090f84e4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickedup: 0
+  hands: {fileID: 1421178742}
+  tool: {fileID: 868932057}
+  offset: {x: 0, y: 0, z: 0}
+  rotation: {x: 80, y: 0, z: 0}
+  toolRB: {fileID: 868932059}
 --- !u!1 &1012818500
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +869,7 @@ Transform:
   m_GameObject: {fileID: 1421178742}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.806, y: 0, z: 0.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638759542454370947
-    m_Hash: 4030701192
+      ticks: 638762985742001939
+    m_Hash: 4282987027
   m_LockFileStatus:
     m_FilePath: C:/Users/Logan Pacheco/Astromecca/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638759542454443413
-    m_Hash: 2409112149
+      ticks: 638762985742011914
+    m_Hash: 1598594549
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

@@ -5,12 +5,12 @@ public class toolscript : MonoBehaviour
     public bool pickedup = false;
     public GameObject hands;
     public GameObject tool;
+    public Vector3 offset = new Vector3(0, 0, 0);
+    public Vector3 rotation = new Vector3(80, 0, 0);
     public Rigidbody toolRB; //comment out for no physics on the tool
-    private Vector3 originalScale;
 
     void Start()
     {
-        originalScale = tool.transform.lossyScale;
     }
 
     void Update()
@@ -30,8 +30,9 @@ public class toolscript : MonoBehaviour
         }
         if (pickedup)
         {
-            tool.transform.SetParent(hands.transform, true);
             toolRB.isKinematic = true; //comment out for no physics on the tool
+            tool.transform.position = hands.transform.position + offset;
+            tool.transform.eulerAngles = hands.transform.eulerAngles + rotation;
             GetComponent<Collider>().enabled = false;
             if (Input.GetMouseButtonDown(1)) {
                 pickedup = false;
@@ -39,7 +40,6 @@ public class toolscript : MonoBehaviour
         }
         else
         {
-            tool.transform.parent = null;
             toolRB.isKinematic = false; //comment out for no physics on the tool
             GetComponent<Collider>().enabled = true;
         }
